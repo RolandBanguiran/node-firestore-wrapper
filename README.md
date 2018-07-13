@@ -11,6 +11,7 @@ userRepository.get().then(users => {
   console.log(users);
 });
 ```
+Available Methods: *get(), getById(), add(), update(), delete()*
 
 # Getting Started
 Please follow below steps to setup this project in your local machine.
