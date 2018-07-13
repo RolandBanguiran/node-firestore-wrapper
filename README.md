@@ -1,4 +1,4 @@
-# Node Firetore Repository
+# Node Firestore Repository
 A Firebase Firestore Repository Class for Node.JS.
 
 ```js
