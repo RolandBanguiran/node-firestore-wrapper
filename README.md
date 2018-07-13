@@ -6,7 +6,7 @@ A Firebase Firestore Repository Class for Node.JS.
 import { FirestoreRepository } from './FirebaseRepository';
 
 // Create user repository object from instantiating FirestoreRepository class
-const userRepository = new FireRepository();
+const userRepository = new FirestoreRepository();
 userRepository.setCollection('users');
 
 // Get all users
