@@ -24,8 +24,7 @@ import { Firestore, CollectionReference, Query, DocumentData } from '@google-clo
 var serviceAccount = require("../serviceAccountKey.json");
 
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://node-firestore-repository.firebaseio.com"
+  credential: admin.credential.cert(serviceAccount)
 });
 
 /**
