@@ -1,6 +1,7 @@
 # Node Firestore Repository
 A Firebase Firestore Repository Class for Node.JS.
 
+## Sample Usage
 ```js
 // Instantiate FirestoreRepository class
 const userRepository = new FireRepository();
