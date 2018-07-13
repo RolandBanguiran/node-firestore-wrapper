@@ -2,7 +2,7 @@
 A Firebase Firestore Repository Class for Node.JS.
 
 ## Sample Usage
-```js
+```javascript
 import { FirestoreRepository } from './FirebaseRepository';
 
 // Create user repository object from instantiating FirestoreRepository class
@@ -22,13 +22,15 @@ Please follow below steps to setup this project in your local machine.
 ## 1. Clone
 - Clone from Github repository
 
-`git clone https://github.com/RolandBanguiran/node-firestore-repository.git`
+```bash
+git clone https://github.com/RolandBanguiran/node-firestore-repository.git
+```
 
 ## 2. Install
 - Select project folder
 - Install project dependencies
 
-```
+```bash
 cd node-firestore-repository
 npm install
 ```
@@ -36,7 +38,7 @@ npm install
 ## 3. Add your private key
 - Add `serviceAccountKey.json` file to your project root folder
 - Paste your generated private key configuration like below
-```js
+```javascript
 {
     "type": "service_account",
     "project_id": "node-firestore-repository",
@@ -52,4 +54,65 @@ npm install
 ```
 
 ## 4. Build and Run
-`npm run-script start`
+```bash
+npm run-script start
+```
+
+
+# API Reference
+
+### `setCollection(collectionName: string): void`
+Set collection name.
+
+**Parameters:**
+- `collectionName` The collection name
+
+### `get(conditions: Array<Condition> = null, orderBy: Array<OrderBy> = null, limit: number = null): Promise<Document[]>`
+Get documents in a collection.
+
+**Parameters:**
+- `conditions` Array of conditions
+- `orderBy` Field name to order by
+- `limit` Number of documents to retrieve
+
+**Return**
+- Array of `Document` objects
+
+### `getById(id: string): Promise<Document>`
+Get a document by ID
+
+**Parameters:**
+- `id` The document ID
+
+**Return**
+- A `Document` object or `null`
+
+### `add(data: Object, id: string = null): Promise<ResultData>`
+Add a document.
+
+**Parameters:**
+- `data` A document object
+- `id` The document ID
+
+**Return:**
+- `ResultData` object or `null`
+
+### `update(data: Object, id: string, isMerge: boolean = false): Promise<ResultData>`
+Update a document.
+
+**Parameters:**
+- `data` The document object
+- `id` The document ID
+- `isMerge` If true, data will merge into existing document. Default is false.
+
+**Return:**
+- `ResultData` object or `null`
+
+### `delete(id: string): Promise<ResultData>`
+Delete a document
+
+**Parameters:**
+- `id` The document ID
+
+**Return:**
+- `ResultData` object or `null`
