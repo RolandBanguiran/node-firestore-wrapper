@@ -1,5 +1,5 @@
 # Node Firestore Repository
-A Firebase Firestore Repository Class for Node.JS.
+A Firebase Firestore API Wrapper Class for Node.JS.
 
 ## Sample Usage
 ```javascript
