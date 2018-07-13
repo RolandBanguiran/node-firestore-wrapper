@@ -20,7 +20,7 @@ Please follow below steps to setup this project in your local machine.
 ## 1. Clone
 - Clone from Github repository
 
-`get clone https://github.com/RolandBanguiran/node-firestore-repository.git`
+`git clone https://github.com/RolandBanguiran/node-firestore-repository.git`
 
 ## 2. Install
 - Select project folder
