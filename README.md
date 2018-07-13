@@ -17,12 +17,12 @@ Available Methods: *get(), getById(), add(), update(), delete()*
 # Getting Started
 Please follow below steps to setup this project in your local machine.
 
-## Clone
+## 1. Clone
 - Clone from Github repository
 
 `get clone https://github.com/RolandBanguiran/node-firestore-repository.git`
 
-## Install
+## 2. Install
 - Select project folder
 - Install project dependencies
 
@@ -31,7 +31,7 @@ cd node-firestore-repository
 npm install
 ```
 
-## Add your private key
+## 3. Add your private key
 - Add `serviceAccountKey.json` file to your project root folder
 - Paste your generated private key configuration like below
 ```js
@@ -49,5 +49,5 @@ npm install
 }
 ```
 
-## Build and Run
+## 4. Build and Run
 `npm run-script start`
