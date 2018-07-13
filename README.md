@@ -3,11 +3,13 @@ A Firebase Firestore Repository Class for Node.JS.
 
 ## Sample Usage
 ```js
-// Instantiate FirestoreRepository class
+import { FirestoreRepository } from './FirebaseRepository';
+
+// Create user repository object from instantiating FirestoreRepository class
 const userRepository = new FireRepository();
 userRepository.setCollection('users');
 
-// Get all documents
+// Get all users
 userRepository.get().then(users => {
   console.log(users);
 });
