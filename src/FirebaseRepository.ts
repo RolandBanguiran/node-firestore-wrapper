@@ -129,11 +129,11 @@ export class FirestoreRepository implements IDataRepository {
         try {
             let result: any = id ? await this._collectionRef.doc(id).set(data) : await this._collectionRef.add(data);
             resultData = {
-                writeTime: result.writeTime,
                 document: {
                     id: id ? id : result.id,
                     data: data
-                }
+                },
+                writeTime: result.writeTime ? result.writeTime : null
             };
         } catch (error) {
             console.log(error);
@@ -155,12 +155,12 @@ export class FirestoreRepository implements IDataRepository {
         try {
             const result = await this._collectionRef.doc(id).set(data, { merge: isMerge });
             resultData = {
-                writeTime: result.writeTime,
                 document: {
                     id: id,
                     data: data
-                }
-            }
+                },
+                writeTime: result.writeTime ? result.writeTime : null
+            };
         } catch (error) {
             console.log(error);
         }
