@@ -1,12 +1,12 @@
 # Node Firestore Repository
-A Firebase Firestore Repository Class for Node.JS.
+Google Cloud Firestore API Wrapper Class for Node.JS
 
 ## Sample Usage
 ```javascript
 import { FirestoreRepository } from './FirebaseRepository';
 
 // Create user repository object from instantiating FirestoreRepository class
-const userRepository = new FireRepository();
+const userRepository = new FirestoreRepository();
 userRepository.setCollection('users');
 
 // Get all users
