@@ -1,5 +1,5 @@
 /**
- * Firebase Firestore Repository Class for Node.JS
+ * Google Cloud Firestore API Wrapper Class for Node.JS
  *
  * MIT License
  * 
