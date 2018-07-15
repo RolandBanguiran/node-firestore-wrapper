@@ -126,17 +126,19 @@ export class FirestoreRepository implements IDataRepository {
     public async add(data: Object, id: string = null): Promise<ResultData> { 
         let resultData: ResultData = null;
         
-        try {
-            let result: any = id ? await this._collectionRef.doc(id).set(data) : await this._collectionRef.add(data);
-            resultData = {
-                document: {
-                    id: id ? id : result.id,
-                    data: data
-                },
-                writeTime: result.writeTime ? result.writeTime : null
-            };
-        } catch (error) {
-            console.log(error);
+        if (this._isCollectionSet) {
+            try {
+                let result: any = id ? await this._collectionRef.doc(id).set(data) : await this._collectionRef.add(data);
+                resultData = {
+                    document: {
+                        id: id ? id : result.id,
+                        data: data
+                    },
+                    writeTime: result.writeTime ? result.writeTime : null
+                };
+            } catch (error) {
+                console.log(error);
+            }
         }
 
         return resultData;
@@ -152,17 +154,19 @@ export class FirestoreRepository implements IDataRepository {
     public async update(data: Object, id: string, isMerge: boolean = false): Promise<ResultData> { 
         let resultData: ResultData = null;
 
-        try {
-            const result = await this._collectionRef.doc(id).set(data, { merge: isMerge });
-            resultData = {
-                document: {
-                    id: id,
-                    data: data
-                },
-                writeTime: result.writeTime ? result.writeTime : null
-            };
-        } catch (error) {
-            console.log(error);
+        if (this._isCollectionSet) {
+            try {
+                const result = await this._collectionRef.doc(id).set(data, { merge: isMerge });
+                resultData = {
+                    document: {
+                        id: id,
+                        data: data
+                    },
+                    writeTime: result.writeTime ? result.writeTime : null
+                };
+            } catch (error) {
+                console.log(error);
+            }
         }
 
         return resultData;
@@ -176,23 +180,25 @@ export class FirestoreRepository implements IDataRepository {
     public async delete(id: string): Promise<ResultData> { 
         let resultData: ResultData = null;
 
-        try {
-            const doc = (await this._collectionRef.doc(id).get());
+        if (this._isCollectionSet) {
+            try {
+                const doc = (await this._collectionRef.doc(id).get());
 
-            if (doc.exists) {
-                const result = await this._collectionRef.doc(id).delete();
-                resultData = {
-                    writeTime: result.writeTime,
-                    document: {
-                        id: id,
-                        data: doc.data()
+                if (doc.exists) {
+                    const result = await this._collectionRef.doc(id).delete();
+                    resultData = {
+                        writeTime: result.writeTime,
+                        document: {
+                            id: id,
+                            data: doc.data()
+                        }
                     }
+                } else {
+                    console.log("Document does not exist.");
                 }
-            } else {
-                console.log("Document does not exist.");
+            } catch (error) {
+                console.log(error);
             }
-        } catch (error) {
-            console.log(error);
         }
 
         return resultData;
