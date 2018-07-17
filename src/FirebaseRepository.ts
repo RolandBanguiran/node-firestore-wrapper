@@ -128,7 +128,7 @@ export class FirestoreRepository implements IDataRepository {
         
         if (this._isCollectionSet) {
             try {
-                let result: any = id ? await this._collectionRef.doc(id).set(data) : await this._collectionRef.add(data);
+                const result: any = id ? await this._collectionRef.doc(id).set(data) : await this._collectionRef.add(data);
                 resultData = {
                     document: {
                         id: id ? id : result.id,
@@ -142,6 +142,32 @@ export class FirestoreRepository implements IDataRepository {
         }
 
         return resultData;
+    }
+
+    /**
+     * Add multiple documents
+     * @param dataArr Array of document objects
+     * @returns ResultData object or null
+     */
+    public async batchAdd(dataArr: Array<Object>): Promise<boolean> { 
+        let result: boolean = false;
+        
+        if (this._isCollectionSet) {
+            const batch = this._db.batch();
+
+            dataArr.forEach(data => {
+                batch.set(this._collectionRef.doc(), data);
+            });
+            
+            try {
+                await batch.commit();
+                result = true;
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        return result;
     }
 
     /**
