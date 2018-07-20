@@ -18,8 +18,8 @@
 'use-strict';
 
 import * as admin from 'firebase-admin';
+import { Firestore, CollectionReference, Query, DocumentData, Timestamp } from '@google-cloud/firestore';
 import { IDataRepository } from './IDataRepository';
-import { Firestore, CollectionReference, Query, DocumentData } from '@google-cloud/firestore';
 
 var serviceAccount = require("../serviceAccountKey.json");
 
@@ -273,7 +273,7 @@ export interface Document {
 
 export interface ResultData {
     document: Document;
-    writeTime?: string;
+    writeTime?: Timestamp;
 }
 
 export interface Condition {
