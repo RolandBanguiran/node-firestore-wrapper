@@ -1,14 +1,14 @@
 {
-  "name": "node-firestore-repository",
+  "name": "node-firestore-wrapper",
   "version": "1.0.0",
-  "description": "Firebase Firestore Repository Class for Node.JS",
+  "description": "Google Firestore API Wrapper Class for Node.JS",
   "main": "index.ts",
   "scripts": {
     "start": "tsc && node dist/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RolandBanguiran/node-firestore-repository.git"
+    "url": "git+https://github.com/RolandBanguiran/node-firestore-wrapper.git"
   },
   "keywords": [
     "node",
@@ -20,9 +20,9 @@
   "author": "Roland Banguiran",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RolandBanguiran/node-firestore-repository/issues"
+    "url": "https://github.com/RolandBanguiran/node-firestore-wrapper/issues"
   },
-  "homepage": "https://github.com/RolandBanguiran/node-firestore-repository#readme",
+  "homepage": "https://github.com/RolandBanguiran/node-firestore-wrapper#readme",
   "dependencies": {
     "@google-cloud/firestore": "^0.15.4",
     "firebase-admin": "^5.12.1"
