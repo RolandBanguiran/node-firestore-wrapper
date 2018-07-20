@@ -25,7 +25,7 @@ Please follow below steps to setup this project in your local machine.
 - Clone from Github repository
 
 ```bash
-git clone https://github.com/RolandBanguiran/node-firestore-repository.git
+git clone https://github.com/RolandBanguiran/node-firestore-wrapper.git
 ```
 
 ## 2. Install
@@ -33,7 +33,7 @@ git clone https://github.com/RolandBanguiran/node-firestore-repository.git
 - Install project dependencies
 
 ```bash
-cd node-firestore-repository
+cd node-firestore-wrapper
 npm install
 ```
 
