@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/RolandBanguiran/node-firestore-repository#readme",
   "dependencies": {
+    "@google-cloud/firestore": "^0.15.4",
     "firebase-admin": "^5.12.1"
   },
   "devDependencies": {
