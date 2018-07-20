@@ -1,4 +1,4 @@
-# Node Firestore Repository
+# Node Firestore Wrapper
 Google Cloud Firestore API Wrapper Class for Node.JS
 
 ## Sample Usage
